@@ -30,4 +30,28 @@ class AppTest {
         assertEquals("!!!!!", replaceIII("aeiou"), "Failed for 'aeiou'")
         assertEquals("!BCD!", replaceIII("ABCDE"), "Failed for 'ABCDE'")
     }
+
+    @Test
+    fun testmakeUpperCase() {
+        assertEquals("HELLO", makeUpperCase("hello"), """str = "hello"""")
+    }
+
+    @Test
+    fun testnoSpace() {
+        assertEquals("8j8mBliB8gimjB8B8jlB", noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"), """x = "8 j 8   mBliB8g  imjB8B8  jl  B"""")
+    }
+
+    @Test
+    fun testgrow() {
+        assertEquals(24, grow(intArrayOf(1, 2, 3, 4)), """arr = intArrayOf(1, 2, 3, 4)""")
+        assertEquals(16, grow(intArrayOf(4, 1, 1, 1, 4)), """arr = intArrayOf(4, 1, 1, 1, 4)""")
+        assertEquals(10000, grow(intArrayOf(10, 10, 10, 10)), """arr = intArrayOf(10, 10, 10, 10)""")
+        assertEquals(0, grow(intArrayOf()), """arr = intArrayOf()""")
+    }
+
+    @Test
+    fun testareaOrPerimeter() {
+        assertEquals(16, areaOrPerimeter(4, 4), """l = 4, w = 4""")
+        assertEquals(32, areaOrPerimeter(6, 10), """l = 6, w = 10""")
+    }
 }

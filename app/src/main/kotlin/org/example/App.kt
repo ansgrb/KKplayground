@@ -7,18 +7,24 @@ package org.example
 
 fun main() {
 
+    println(noSpace(x = "8 j 8   mBliB8g  imjB8B8  jl  B"))
+    println(grow(arr = intArrayOf(1, 2, 3, 4)))
+
 }
 
 
-// Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence
-// Description:
-// Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
+/**********************************************************************************
+    Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence
+    Description:
+    Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
 
-// Examples
-// "Hi!" --> "H!!"
-// "!Hi! Hi!" --> "!H!! H!!"
-// "aeiou" --> "!!!!!"
-// "ABCDE" --> "!BCD!"
+    Examples
+    "Hi!" --> "H!!"
+    "!Hi! Hi!" --> "!H!! H!!"
+    "aeiou" --> "!!!!!"
+    "ABCDE" --> "!BCD!"
+
+ **********************************************************************************/
 
 fun replace(s: String): String {
     val vowels = setOf('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
@@ -38,3 +44,60 @@ fun replaceII(s: String): String {
 }
 
 fun replaceIII(s: String) = s.replace(Regex("[aeiouAEIOU]"), "!")
+
+/**********************************************************************************
+    MakeUpperCase
+    Write a function which converts the input string to uppercase.
+
+ **********************************************************************************/
+
+ fun makeUpperCase(str: String): String {
+    return str.uppercase()
+}
+
+/**********************************************************************************
+    Remove String Spaces
+    Write a function that removes the spaces from the string, then return the resultant string.
+
+    Examples (Input -> Output):
+
+    "8 j 8   mBliB8g  imjB8B8  jl  B" -> "8j8mBliB8gimjB8B8jlB"
+    "8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd" -> "88Bifk8hB8BB8BBBB888chl8BhBfd"
+    "8aaaaa dddd r     " -> "8aaaaaddddr"
+
+ **********************************************************************************/
+
+ fun noSpace(x: String): String {
+    return x.replace(" ", "")
+  }
+
+  /**********************************************************************************
+    Beginner - Reduce but Grow
+    Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+    [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+
+ **********************************************************************************/
+
+ fun grow(arr: IntArray): Int {
+    if (arr.isEmpty()) return 0
+    return arr.reduce { acc, i -> acc * i }
+ }
+
+   /**********************************************************************************
+    Area or Perimeter
+    You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
+    If it is a square, return its area. If it is a rectangle, return its perimeter.
+
+    Example(Input1, Input2 --> Output):
+
+    6, 10 --> 32
+    3, 3 --> 9
+
+    Note: for the purposes of this kata you will assume that it is a square if its length and width are equal, otherwise it is a rectangle.
+
+ **********************************************************************************/
+
+ fun areaOrPerimeter(l:Int, w:Int):Int {
+    return if (l == w) l * w else 2 * (l + w)
+  } 
