@@ -6,8 +6,19 @@ package org.example
 
 
 fun main() {
-    
+
 }
+
+
+// Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence
+// Description:
+// Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
+
+// Examples
+// "Hi!" --> "H!!"
+// "!Hi! Hi!" --> "!H!! H!!"
+// "aeiou" --> "!!!!!"
+// "ABCDE" --> "!BCD!"
 
 fun replace(s: String): String {
     val vowels = setOf('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
@@ -20,3 +31,10 @@ fun replace(s: String): String {
     }
     return result.toString()
 }
+
+fun replaceII(s: String): String {
+    val vowels = setOf('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
+    return s.map { char -> if (char in vowels) '!' else char }.joinToString("")
+}
+
+fun replaceIII(s: String) = s.replace(Regex("[aeiouAEIOU]"), "!")

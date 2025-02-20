@@ -14,4 +14,20 @@ class AppTest {
         assertEquals("!!!!!", replace("aeiou"), "Failed for 'aeiou'")
         assertEquals("!BCD!", replace("ABCDE"), "Failed for 'ABCDE'")
     }
+
+    @Test
+    fun testReplaceII() {
+        assertEquals("H!!", replaceII("Hi!"), "Failed for 'Hi!'")
+        assertEquals("!H!! H!!", replaceII("!Hi! Hi!"), "Failed for '!Hi! Hi!'")
+        assertEquals("!!!!!", replaceII("aeiou"), "Failed for 'aeiou'")
+        assertEquals("!BCD!", replaceII("ABCDE"), "Failed for 'ABCDE'")
+    }
+
+    @Test
+    fun testReplaceIII() {
+        assertEquals("H!!", replaceIII("Hi!"), "Failed for 'Hi!'")
+        assertEquals("!H!! H!!", replaceIII("!Hi! Hi!"), "Failed for '!Hi! Hi!'")
+        assertEquals("!!!!!", replaceIII("aeiou"), "Failed for 'aeiou'")
+        assertEquals("!BCD!", replaceIII("ABCDE"), "Failed for 'ABCDE'")
+    }
 }
